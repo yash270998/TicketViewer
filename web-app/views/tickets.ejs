@@ -75,7 +75,26 @@
         </div>
     </div>
     <script>
-        
+        $("#btnPrevious").click(function (event) {
+            $("#btnPrevious").html("<i class='fa fa-circle-o-notch fa-spin'></i> Previous");
+            window.location = "/" + <%= parseInt(pageNo) - 1 %> ;
+        });
+
+        $("#btnNext").click(function (event) {
+            $("#btnNext").html("<i class='fa fa-circle-o-notch fa-spin'></i> Next");
+            window.location = "/" + <%= parseInt(pageNo) + 1 %> ;
+        });
+
+        $(".detail-view").click(function (e) {
+            $(e.currentTarget).html("<i class='fa fa-circle-o-notch fa-spin'></i> Detail View");
+            window.location = "/ticket/" + e.currentTarget.id;
+        });
+
+
+        $(".search_icon").click(function (e) {
+            console.log($(".search__field").val());
+            window.location = "/ticket/" + $(".search__field").val();
+        });
     </script>
 </body>
 
