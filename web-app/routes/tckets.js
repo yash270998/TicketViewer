@@ -28,7 +28,14 @@ function tickets(req, res) {
         ? ""
         : "disabled");
 
-       
-}
+        /* Using the response form get Request and rendering it into the ticket.ejs page  */
 
+      ejs.renderFile('./views/tickets.ejs', response.data, function (err, result) {
+        if (!err) {
+          res
+            .status(200)
+            .send(result       // render or error
+            );
+
+         
 exports.tickets = tickets;
