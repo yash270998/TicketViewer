@@ -37,5 +37,26 @@ function tickets(req, res) {
             .send(result       // render or error
             );
 
-         
+            /* If File not found throwing error 404 */ 
+        } else {
+          res
+            .status(404)
+            .send(`'<link rel=\'stylesheet\' href=\'/css/style.css\'/>
+                            <h1 class="error-heading">
+                             404 Page Not Found
+                            </h1> '`);
+        }
+      });
+
+    })
+    .catch(function (error) {
+      res
+        .status(404)
+        .send(`'<link rel=\'stylesheet\' href=\'/css/style.css\' >
+                <h1 class="error-heading">
+                    400 invalid page requested or API not available
+                </h1>'`);
+    });
+}
+
 exports.tickets = tickets;
