@@ -11,6 +11,10 @@ function singleTicket(req, res) {
       password: process.env.PASSWORD
     }
   };
+ /* Sending http get request using axios */
+ axios
+ .get('https://' + process.env.SUBDOMAIN + '.zendesk.com/api/v2/tickets/' + req.params.ticketId, config)
+ .then(function (response) {
 
 }
 exports.singleTicket = singleTicket;
