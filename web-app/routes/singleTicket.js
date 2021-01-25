@@ -15,6 +15,15 @@ function singleTicket(req, res) {
  axios
  .get('https://' + process.env.SUBDOMAIN + '.zendesk.com/api/v2/tickets/' + req.params.ticketId, config)
  .then(function (response) {
+   
+/* Using the response form get Request and rendering it into the singleTicket.ejs page  */
+ejs
+.renderFile('./views/singleTicket.ejs', response.data, function (err, result) {
+  if (!err) {
+    res
+      .status(200)
+      .send(result // render or error
+      );
 
 }
 exports.singleTicket = singleTicket;
