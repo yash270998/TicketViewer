@@ -34,5 +34,5 @@
 
 ## 🔧 Unit Tests
 
-![Testing code](https://github.com/yash270998/Ticket-Viewer/blob/master/web-app/public/img/TestCases.jpg "Unit Test")
+![Testing code](https://github.com/yash270998/TicketViewer/blob/master/web-app/public/img/TestCases.png "Unit Test")
 
